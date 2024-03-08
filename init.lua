@@ -844,5 +844,8 @@ require('lazy').setup({
 vim.opt.tabstop = 4
 vim.opt.wrap = false
 vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
+vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
