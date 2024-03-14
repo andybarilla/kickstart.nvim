@@ -734,6 +734,13 @@ require('lazy').setup({
       -- You can configure highlights by doing something like
       vim.cmd.hi 'Comment gui=none'
     end,
+    opts = {
+      transparent = true,
+      styles = {
+        sidebars = 'transparent',
+        floats = 'transparent',
+      },
+    },
   },
 
   -- Highlight todo, notes, etc in comments
@@ -847,5 +854,15 @@ vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
 
+vim.cmd 'highlight Normal guibg=NONE'
+vim.cmd 'highlight NonText guibg=NONE'
+vim.cmd 'highlight NonText ctermbg=NONE'
+vim.cmd 'highlight NonText ctermbg=NONE'
+vim.keymap.set('n', '<leader>o', function()
+  vim.cmd 'highlight Normal guibg=NONE'
+  vim.cmd 'highlight NonText guibg=NONE'
+  vim.cmd 'highlight NonText ctermbg=NONE'
+  vim.cmd 'highlight NonText ctermbg=NONE'
+end)
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
