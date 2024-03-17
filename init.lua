@@ -543,6 +543,16 @@ require('lazy').setup({
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
         tsserver = {},
+        templ = {},
+        html = {
+          filetypes = { 'gohtml', 'html', 'templ' },
+        },
+        htmx = {
+          filetypes = { 'gohtml', 'html', 'templ' },
+        },
+        tailwindcss = {
+          filetypes = { 'gohtml', 'html', 'templ' },
+        },
         --
 
         lua_ls = {
@@ -834,5 +844,7 @@ vim.keymap.set('n', '<leader>o', function()
   vim.cmd 'highlight NonText ctermbg=NONE'
   vim.cmd 'highlight NonText ctermbg=NONE'
 end)
+
+vim.filetype.add { extension = { templ = 'templ' } }
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
