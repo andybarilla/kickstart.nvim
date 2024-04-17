@@ -20,6 +20,7 @@ return {
 
     -- Add your own debuggers here
     'leoluz/nvim-dap-go',
+    'theHamsta/nvim-dap-virtual-text',
   },
   config = function()
     local dap = require 'dap'
@@ -84,5 +85,7 @@ return {
 
     -- Install golang specific config
     require('dap-go').setup()
+
+    require('nvim-dap-virtual-text').setup()
   end,
 }
